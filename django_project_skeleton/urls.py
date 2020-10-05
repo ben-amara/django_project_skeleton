@@ -5,6 +5,7 @@ The `urlpatterns` list routes URLs to views. For more information please see:
 """
 # Django imports
 from . import views
+from .viewsClass import HomeView
 from django.conf.urls import include, url, handler404
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
@@ -12,7 +13,7 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     # Examples:
-    url(r'^$', views.home_page, name='home'),
+    url(r'^$', HomeView.as_view(), name='home'),
     url(r'^reviews/', views.reviews_page, name='reviews'),
     url(r'^compare/', views.compare_page, name='compare'),
     url(r'^coupons/', views.coupons_page, name='coupons'),
