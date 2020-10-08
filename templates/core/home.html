@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Home{% endblock %}
 
@@ -6,8 +7,13 @@
 <div class="container container--article">
   <div class="section-articles section--primary">
     <div class="shell">
-      page Home works!
+      page Home works! <button onclick="LoadTxt()">Click to say hello</button>
+      <div id="show-text"></div>
     </div>
   </div>
 </div>
 {% endblock %}
+{% block javascript %}
+<script src="{% static 'assets/js/app.js' %}"></script>
+{% endblock %}
+
